@@ -38,6 +38,8 @@ SwiftyEmail.shared.sendEmail(subject: "Your order has been processed!", body: "T
 }
 ```
 
+Then, the user's e-mail app is going to be called if the **result** is a success, with all the data provided.
+
 Always remember that the e-mail has a **subject**, a **body** and a **recipient**, as well as the **result** for presenting the e-mail app.
 
 ## 🔨 Swift Package Manager
