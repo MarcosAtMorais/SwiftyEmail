@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://www.marcostmorais.com/swifty-email.png">
+    <img src="https://www.marcostmorais.com/swiftyemail.png">
 </p>
 
 
