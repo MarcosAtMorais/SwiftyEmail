@@ -22,10 +22,10 @@ open class SwiftyEmail: NSObject {
         - subject: The subject for your e-mail.
         - body: This is the message, what is going to be written on the e-mail.
         - recipient: The e-mail of the recipient.
-        - completion: A block to execute after the execution, housing a boolean with the success of presenting the e-mail provider.
+        - completion: A block to execute after the execution, housing a Result with a boolean with the success of presenting the e-mail provider or the error associated to the action.
 
      */
-    public func sendEmail(subject: String, body: String, recipient: String, completion: @escaping (Bool) -> Void){
+    public func sendEmail(subject: String, body: String, recipient: String, completion: @escaping (Result<Bool, Error>) -> Void){
         if MFMailComposeViewController.canSendMail() {
             let picker = MFMailComposeViewController()
             picker.setSubject(subject)
@@ -33,14 +33,19 @@ open class SwiftyEmail: NSObject {
             picker.setToRecipients([recipient])
             picker.mailComposeDelegate = self
             
-            guard #available(iOS 11.0, *), let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-            guard let window = scene.windows.first else { return }
+            guard #available(iOS 11.0, *), let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { completion(.failure(EmailError.unableToPresentViewController))
+                return
+            }
+            guard let window = scene.windows.first else {
+                completion(.failure(EmailError.unableToPresentViewController))
+                return
+            }
             
             window.rootViewController?.present(picker, animated: true)
         } else if let emailUrl = createEmailUrl(recipient: recipient, subject: subject, body: body) {
             UIApplication.shared.open(emailUrl)
         }
-        completion(MFMailComposeViewController.canSendMail())
+        completion(.success(MFMailComposeViewController.canSendMail()))
     }
     
     /**
