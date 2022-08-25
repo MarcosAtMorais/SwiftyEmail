@@ -1,6 +1,5 @@
 import Foundation
 import MessageUI
-import SwiftUI
 
 open class SwiftyEmail: NSObject {
     public static let shared = SwiftyEmail()
