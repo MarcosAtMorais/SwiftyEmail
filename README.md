@@ -59,5 +59,7 @@ You can also add this library using Swift Package Manager.
 
 **iOS** 13+
 
+**iPadOS** 13+
+
 **Mac Catalyst** 13+
 
