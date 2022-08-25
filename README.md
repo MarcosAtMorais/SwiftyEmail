@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://www.marcostmorais.com/swifty-email.jpeg">
+    <img src="https://www.marcostmorais.com/swiftyemail.png">
 </p>
 
 
@@ -28,7 +28,9 @@ import SwiftyEmail
 Then, you can use it as you please. Use it like this:
 
 ```swift
-SwiftyEmail.shared.sendEmail(subject: "Your order has been processed!", body: "This is just an example for an e-mail body.", recipient: "johndoe@gmail.com") { result in
+SwiftyEmail.shared.sendEmail(subject: "Your order has been processed!",
+                             body: "This is just an example for an e-mail body.",
+                             recipient: "johndoe@gmail.com") { result in
     switch result {
     case .success(let emailWasSent):
         print("The viewController was presented and the email \(emailWasSent)")
@@ -37,6 +39,8 @@ SwiftyEmail.shared.sendEmail(subject: "Your order has been processed!", body: "T
     }
 }
 ```
+
+Then, the user's e-mail app is going to be called if the **result** is a success, with all the data provided.
 
 Always remember that the e-mail has a **subject**, a **body** and a **recipient**, as well as the **result** for presenting the e-mail app.
 
