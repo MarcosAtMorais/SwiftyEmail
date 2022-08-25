@@ -28,7 +28,9 @@ import SwiftyEmail
 Then, you can use it as you please. Use it like this:
 
 ```swift
-SwiftyEmail.shared.sendEmail(subject: "Your order has been processed!", body: "This is just an example for an e-mail body.", recipient: "johndoe@gmail.com") { result in
+SwiftyEmail.shared.sendEmail(subject: "Your order has been processed!",
+                             body: "This is just an example for an e-mail body.",
+                             recipient: "johndoe@gmail.com") { result in
     switch result {
     case .success(let emailWasSent):
         print("The viewController was presented and the email \(emailWasSent)")
