@@ -24,7 +24,7 @@ Just **import SwiftyEmail**:
 import SwiftyEmail
 ```
 
-Add the **LSApplicationQueriesSchemes** key to your Info.plist. It's an array with four strings.
+Add the **LSApplicationQueriesSchemes** key to your **Info.plist**. It's an array with four strings.
 ```swift
 <key>LSApplicationQueriesSchemes</key>
 <array>
