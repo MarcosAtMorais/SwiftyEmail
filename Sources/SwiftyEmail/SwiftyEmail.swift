@@ -49,7 +49,7 @@ open class SwiftyEmail: NSObject {
     }
     
     /**
-     This creates the e-mail URL based on the selected provider. It checks for the top 5 most used e-mail apps.
+     This creates the e-mail URL based on the selected provider. It checks for the top 5 most used e-mail apps. This method will attempt to look for several e-mail apps, so it might produce some logs until it finds the user's favorite e-mail app.
      
       - parameters:
         - recipient: The subject for your e-mail.
