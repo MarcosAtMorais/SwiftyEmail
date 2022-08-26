@@ -26,13 +26,13 @@ import SwiftyEmail
 
 Add the **LSApplicationQueriesSchemes** key to your Info.plist. It's an array with four strings.
 ```swift
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>googlegmail</string>
-		<string>ms-outlook</string>
-		<string>readdle-spark</string>
-		<string>ymail</string>
-	</array>
+<key>LSApplicationQueriesSchemes</key>
+<array>
+	<string>googlegmail</string>
+	<string>ms-outlook</string>
+	<string>readdle-spark</string>
+	<string>ymail</string>
+</array>
 ```
 
 It should look like this:
